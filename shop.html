@@ -1,0 +1,1037 @@
+```html
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ຮ້ານເຕີມບັດ&ເຕີມເກມ | ບໍລິການເຕີມເງິນ-ເຕີມເກມ 24 ຊົ່ວໂມງ</title>
+  <!-- Load Noto Sans Lao font for clear Lao readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Lao"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Base page palette and smooth touch behavior */
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Noto Sans Lao', sans-serif;
+    }
+    body {
+      background-color: #f6f8fc;
+      color: #0f172a;
+    }
+    /* Hide horizontal scrollbar on tab bar while keeping touch scroll smooth */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Smooth tactile card interaction */
+    .pkg-card {
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+    .pkg-card:active {
+      transform: scale(0.985);
+    }
+    /* Vibrant header gradient */
+    .hero-gradient {
+      background: linear-gradient(125deg, #4f46e5 0%, #7c3aed 42%, #f43f5e 82%, #10b981 120%);
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-indigo-200 selection:text-indigo-950 pb-14">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-11 h-11 rounded-2xl hero-gradient text-white flex items-center justify-center shadow-md shadow-indigo-500/25 shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div class="min-w-0">
+          <h1 class="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-indigo-600 via-violet-600 to-rose-500 bg-clip-text text-transparent truncate">
+            ຮ້ານເຕີມບັດ&ເຕີມເກມ
+          </h1>
+          <p class="text-xs text-slate-600 flex items-center gap-1.5 truncate">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+            <span>ເຕີມບັດ · ເຕີມເນັດ · ເຕີມເກມ ຄົບທັງໝົດ 74 ແພັກເກັດ</span>
+          </p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onclick="openQrModal()"
+        class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-500/20 transition cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h5v5H3V4zm13 0h5v5h-5V4zM3 15h5v5H3v-5zm13 2h2v3h-2v-3zm3-2h2v2h-2v-2zm-3-2h2v2h-2v-2zm3 4h2v3h-2v-3z" />
+        </svg>
+        <span>ຄິວອາໂອນເງິນ</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto px-4 pt-5 space-y-5">
+
+    <!-- Hero Banner & Live Search Bar -->
+    <section class="relative overflow-hidden rounded-3xl hero-gradient p-5 sm:p-6 text-white shadow-lg shadow-indigo-500/20">
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-bold mb-2">
+            ⚡ ພ້ອມບໍລິການທຸກມື້ · ແຈ້ງອໍເດີໄວທັນໃຈ
+          </span>
+          <h2 class="text-xl sm:text-2xl font-extrabold leading-snug">
+            ເລືອກແພັກເກັດເຕີມເງິນ ແລະ ເພັດເກມ
+          </h2>
+          <p class="text-xs sm:text-sm text-white/90 mt-1">
+            ກົດທີ່ແພັກເກັດໃດກໍໄດ້ເພື່ອປ້ອນຂໍ້ມູນ ແລະ ສົ່ງອໍເດີຜ່ານ WhatsApp ຫຼື Messenger
+          </p>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="relative w-full md:w-80 shrink-0">
+          <span class="absolute inset-y-0 left-3.5 flex items-center text-indigo-600 pointer-events-none">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="ຄົ້ນຫາແພັກເກັດ, ເພັດ, ຫຼຸດ, ລາຄາ..."
+            class="w-full pl-10 pr-9 py-3 text-sm bg-white text-slate-900 placeholder-slate-400 rounded-2xl shadow-md focus:outline-none focus:ring-2 focus:ring-amber-300 transition"
+          />
+          <button
+            type="button"
+            id="clearSearchBtn"
+            onclick="clearSearch()"
+            aria-label="ລ້າງຄຳຄົ້ນຫາ"
+            class="hidden absolute inset-y-0 right-3 flex items-center text-slate-400 hover:text-rose-500 cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter Tabs -->
+    <nav aria-label="ໝວດໝູ່ແພັກເກັດ" class="bg-white rounded-2xl p-2.5 border border-slate-200/90 shadow-sm">
+      <div id="categoryTabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </nav>
+
+    <!-- Two-Column Workspace: Packages Left, Payment QR & Quick Order Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- Package Listings Column -->
+      <div class="lg:col-span-8 space-y-6">
+        <div id="packagesContainer" class="space-y-6">
+          <!-- Rendered by JavaScript -->
+        </div>
+
+        <!-- Fallback/Empty Search Notice with Quick Reset -->
+        <div id="emptyNotice" class="hidden bg-white rounded-3xl p-8 text-center border border-slate-200 shadow-sm">
+          <p class="text-base font-bold text-slate-800">ບໍ່ພົບລາຍການທີ່ກົງກັບຄຳຄົ້ນຫາ</p>
+          <p class="text-xs text-slate-500 mt-1">ກົດປຸ່ມດ້ານລຸ່ມເພື່ອກັບໄປສະແດງແພັກເກັດທັງໝົດ</p>
+          <button
+            type="button"
+            onclick="resetFilters()"
+            class="mt-4 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-xs sm:text-sm font-bold shadow-md cursor-pointer"
+          >
+            ສະແດງແພັກເກັດທັງໝົດ
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Sidebar: QR Payment Card & Order Launcher -->
+      <aside class="lg:col-span-4 space-y-5 lg:sticky lg:top-20">
+
+        <!-- QR Payment Card -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white text-xs font-extrabold flex items-center justify-center">
+                QR
+              </span>
+              ສະແກນຄິວອາຊຳລະເງິນ
+            </h3>
+            <button
+              type="button"
+              onclick="openQrModal()"
+              class="text-xs font-bold text-emerald-600 hover:text-emerald-700 cursor-pointer"
+            >
+              ຂະຫຍາຍຮູບ
+            </button>
+          </div>
+
+          <div class="mt-4 flex flex-col items-center text-center">
+            <div
+              onclick="openQrModal()"
+              class="group relative w-52 sm:w-56 rounded-2xl overflow-hidden border-2 border-emerald-200 hover:border-emerald-500 bg-slate-50 shadow-sm cursor-pointer transition"
+            >
+              <img
+                src="https://i.ibb.co/Ps9h8fzr/IMG-20261122-223652.jpg"
+                alt="QR Code ຊຳລະເງິນ ຮ້ານເຕີມບັດ&ເຕີມເກມ"
+                class="w-full h-auto object-contain block"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x500/eef4ff/1d4ed8?text=QR+Code+Payment';"
+              />
+              <div class="bg-slate-900/75 text-white text-[11px] font-bold py-1.5">
+                ກົດເພື່ອຂະຫຍາຍຮູບ QR
+              </div>
+            </div>
+
+            <div id="selectedPreviewBanner" class="hidden mt-3 w-full rounded-2xl bg-indigo-50 border border-indigo-200 p-3 text-left">
+              <p class="text-[11px] font-bold text-indigo-600">ລາຍການທີ່ເລືອກ:</p>
+              <p id="bannerItemName" class="text-xs font-extrabold text-slate-900 mt-0.5"></p>
+              <p id="bannerItemPrice" class="text-xs font-extrabold text-indigo-700 mt-0.5"></p>
+              <button
+                type="button"
+                onclick="openOrderModal()"
+                class="mt-2 w-full py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-xs font-bold shadow-sm cursor-pointer"
+              >
+                ເປີດໜ້າສັ່ງອໍເດີລາຍການນີ້ →
+              </button>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+              ໂອນເງິນຕາມຍອດແພັກເກັດ ແລ້ວກົດເລືອກແພັກເກັດເພື່ອສົ່ງອໍເດີ ແລະ ສະລິບຜ່ານ WhatsApp ຫຼື Messenger
+            </p>
+          </div>
+        </div>
+
+        <!-- Direct Contact Card -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-sm space-y-2.5">
+          <h3 class="font-extrabold text-slate-900 text-sm">ຊ່ອງທາງຕິດຕໍ່ຮ້ານໂດຍກົງ</h3>
+          <a
+            href="https://wa.me/message/C4I2RDW46C3YH1?src=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition"
+          >
+            <span>ແຊັດຜ່ານ WhatsApp</span>
+            <span>↗</span>
+          </a>
+          <a
+            href="https://m.me/61591124842145?hash=I8UDrJnhCryOq1eu&source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition"
+          >
+            <span>ແຊັດຜ່ານ Messenger</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- Order Modal with Dynamic Fields & Channel Launcher -->
+  <div
+    id="orderModal"
+    class="hidden fixed inset-0 z-50 bg-slate-950/65 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="closeOrderModal()"
+  >
+    <div
+      class="bg-white rounded-3xl max-w-md w-full p-5 sm:p-6 shadow-2xl border border-slate-200 max-h-[92vh] overflow-y-auto"
+      onclick="event.stopPropagation()"
+    >
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900">ຢືນຢັນການສັ່ງຊື້</h3>
+        <button
+          type="button"
+          onclick="closeOrderModal()"
+          aria-label="ປິດໜ້າຕ່າງສັ່ງຊື້"
+          class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Selected Package Summary -->
+      <div class="mt-4 rounded-2xl bg-gradient-to-r from-indigo-50 via-violet-50 to-rose-50 border border-indigo-200/80 p-3.5">
+        <span id="modalPkgBadge" class="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-600 text-white mb-1">
+          ແພັກເກັດ
+        </span>
+        <div id="modalPkgName" class="text-sm font-extrabold text-slate-900"></div>
+        <div id="modalPkgPrice" class="text-base font-extrabold text-indigo-700 mt-1"></div>
+      </div>
+
+      <!-- Dynamic Customer Input Fields -->
+      <div class="mt-4 space-y-3">
+        <!-- Phone Number Input (ltc-card, ltc-net, unitel-card, unitel-net) -->
+        <div id="fieldPhoneWrapper" class="hidden">
+          <label for="inputPhone" class="block text-xs font-bold text-slate-700 mb-1">
+            ເບີໂທລະສັບທີ່ຕ້ອງການເຕີມ <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="tel"
+            id="inputPhone"
+            inputmode="tel"
+            placeholder="ຕົວຢ່າງ: 020 9xxxxxxx ຫຼື 020 5xxxxxxx"
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600"
+          />
+        </div>
+
+        <!-- Free Fire UID Input (ff) -->
+        <div id="fieldFfWrapper" class="hidden">
+          <label for="inputFfUid" class="block text-xs font-bold text-slate-700 mb-1">
+            ໄອດີເກມ Free Fire (UID) <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="inputFfUid"
+            inputmode="numeric"
+            placeholder="ປ້ອນເລກ UID ໃນເກມ Free Fire"
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-600"
+          />
+        </div>
+
+        <!-- Mobile Legends User ID + Server ID Input (ml) -->
+        <div id="fieldMlWrapper" class="hidden grid grid-cols-3 gap-2.5">
+          <div class="col-span-2">
+            <label for="inputMlUser" class="block text-xs font-bold text-slate-700 mb-1">
+              User ID <span class="text-rose-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="inputMlUser"
+              inputmode="numeric"
+              placeholder="ເຊັ່ນ: 123456789"
+              class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600"
+            />
+          </div>
+          <div class="col-span-1">
+            <label for="inputMlServer" class="block text-xs font-bold text-slate-700 mb-1">
+              Server ID <span class="text-rose-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="inputMlServer"
+              inputmode="numeric"
+              placeholder="ເຊັ່ນ: 1234"
+              class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600"
+            />
+          </div>
+        </div>
+
+        <!-- Channel Selector -->
+        <div>
+          <span class="block text-xs font-bold text-slate-700 mb-1.5">
+            ເລືອກຊ່ອງທາງສົ່ງອໍເດີ
+          </span>
+          <div class="grid grid-cols-2 gap-2.5">
+            <button
+              type="button"
+              id="optWhatsapp"
+              onclick="setOrderChannel('whatsapp')"
+              class="p-2.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition"
+            >
+              <span>WhatsApp</span>
+              <span id="checkWhatsapp">✓</span>
+            </button>
+            <button
+              type="button"
+              id="optMessenger"
+              onclick="setOrderChannel('messenger')"
+              class="p-2.5 rounded-2xl border-2 border-slate-200 bg-slate-50 text-slate-700 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition"
+            >
+              <span>Messenger</span>
+              <span id="checkMessenger" class="hidden">✓</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Order Summary Preview -->
+        <div class="bg-slate-50 rounded-2xl p-3 border border-slate-200">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[11px] font-bold text-slate-500">ຂໍ້ຄວາມອໍເດີ (ຄັດລອກອັດຕະໂນມັດ):</span>
+            <button
+              type="button"
+              onclick="copyOrderSummary(true)"
+              class="text-[11px] font-bold text-indigo-600 hover:underline cursor-pointer"
+            >
+              ຄັດລອກ
+            </button>
+          </div>
+          <pre id="modalOrderPreview" class="text-xs text-slate-800 whitespace-pre-wrap font-sans leading-relaxed"></pre>
+        </div>
+
+        <!-- Validation Error Message Box -->
+        <div id="orderErrorBox" class="hidden rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold px-3.5 py-2.5"></div>
+
+        <!-- Primary Launch Button -->
+        <button
+          type="button"
+          id="launchOrderBtn"
+          onclick="launchOrderChannel()"
+          class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-500/25 cursor-pointer transition"
+        >
+          ຄັດລອກ ແລະ ເປີດ WhatsApp ທັນທີ ↗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR Zoom Modal -->
+  <div
+    id="qrModal"
+    class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="closeQrModal()"
+  >
+    <div
+      class="bg-white rounded-3xl max-w-sm w-full p-5 shadow-2xl border border-slate-200"
+      onclick="event.stopPropagation()"
+    >
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="font-extrabold text-slate-900 text-base">QR Code ຊຳລະເງິນ</h3>
+        <button
+          type="button"
+          onclick="closeQrModal()"
+          aria-label="ປິດຮູບ QR"
+          class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+      <div class="mt-4 rounded-2xl overflow-hidden border border-emerald-200 bg-slate-50">
+        <img
+          src="https://i.ibb.co/Ps9h8fzr/IMG-20261122-223652.jpg"
+          alt="QR Code ຊຳລະເງິນຂະໜາດໃຫຍ່"
+          class="w-full h-auto object-contain block"
+          onerror="this.onerror=null;this.src='https://placehold.co/400x500/eef4ff/1d4ed8?text=QR+Code+Payment';"
+        />
+      </div>
+      <p class="text-xs text-center text-slate-500 mt-3">
+        ກົດຄ້າງທີ່ຮູບ ຫຼື ແຄັບໜ້າຈໍເພື່ອສະແກນຊຳລະເງິນໃນແອັບທະນາຄານ
+      </p>
+      <button
+        type="button"
+        onclick="closeQrModal()"
+        class="mt-4 w-full py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-sm cursor-pointer"
+      >
+        ປິດໜ້າຕ່າງ
+      </button>
+    </div>
+  </div>
+
+  <!-- Feedback Toast Banner -->
+  <div
+    id="toastBanner"
+    class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-2xl bg-slate-900 text-white text-xs sm:text-sm font-bold shadow-xl max-w-[92vw] text-center"
+  >
+    <span id="toastText"></span>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. CHANNEL LINKS & CATEGORY METADATA
+    // =========================================================================
+    const WHATSAPP_URL = "https://wa.me/message/C4I2RDW46C3YH1?src=qr";
+    const MESSENGER_URL = "https://m.me/61591124842145?hash=I8UDrJnhCryOq1eu&source=qr";
+
+    const CATEGORY_TABS = [
+      { id: "all", label: "ທັງໝົດ", title: "ແພັກເກັດທັງໝົດ" },
+      { id: "ltc-card", label: "ບັດຫຼັກ 9", title: "ເຕີມບັດຫຼັກ 9" },
+      { id: "ltc-net", label: "ເນັດຫຼັກ 9", title: "ເຕີມເນັດຫຼັກ 9" },
+      { id: "unitel-card", label: "ບັດຫຼັກ 5", title: "ເຕີມບັດຫຼັກ 5" },
+      { id: "unitel-net", label: "ເນັດຫຼັກ 5", title: "ເຕີມເນັດຫຼັກ 5" },
+      { id: "ff", label: "ຟີຟາຍ", title: "ເຕີມເກມຟີຟາຍ" },
+      { id: "ml", label: "ໂມບາຍ", title: "ເຕີມເກມໂມບາຍ" },
+    ];
+
+    const CATEGORY_STYLES = {
+      "ltc-card": {
+        barBg: "from-[#ef4444] to-[#f97316]",
+        cardBorder: "border-red-200/90 hover:border-[#ef4444]",
+        badgeBg: "bg-red-50 text-[#ef4444] border-red-200",
+        priceText: "text-[#ef4444]",
+        btnBg: "bg-gradient-to-r from-[#ef4444] to-[#f97316] text-white",
+        tabActive: "bg-gradient-to-r from-[#ef4444] to-[#f97316] text-white shadow-sm",
+      },
+      "ltc-net": {
+        barBg: "from-[#e11d48] to-[#f59e0b]",
+        cardBorder: "border-rose-200/90 hover:border-[#e11d48]",
+        badgeBg: "bg-rose-50 text-[#e11d48] border-rose-200",
+        priceText: "text-[#e11d48]",
+        btnBg: "bg-gradient-to-r from-[#e11d48] to-[#f59e0b] text-white",
+        tabActive: "bg-gradient-to-r from-[#e11d48] to-[#f59e0b] text-white shadow-sm",
+      },
+      "unitel-card": {
+        barBg: "from-[#10b981] to-[#06b6d4]",
+        cardBorder: "border-emerald-200/90 hover:border-[#10b981]",
+        badgeBg: "bg-emerald-50 text-emerald-700 border-emerald-200",
+        priceText: "text-emerald-700",
+        btnBg: "bg-gradient-to-r from-[#10b981] to-[#06b6d4] text-white",
+        tabActive: "bg-gradient-to-r from-[#10b981] to-[#06b6d4] text-white shadow-sm",
+      },
+      "unitel-net": {
+        barBg: "from-[#0ea5e9] to-[#10b981]",
+        cardBorder: "border-sky-200/90 hover:border-[#0ea5e9]",
+        badgeBg: "bg-sky-50 text-sky-700 border-sky-200",
+        priceText: "text-sky-700",
+        btnBg: "bg-gradient-to-r from-[#0ea5e9] to-[#10b981] text-white",
+        tabActive: "bg-gradient-to-r from-[#0ea5e9] to-[#10b981] text-white shadow-sm",
+      },
+      "ff": {
+        barBg: "from-[#f97316] to-[#eab308]",
+        cardBorder: "border-orange-200/90 hover:border-[#f97316]",
+        badgeBg: "bg-orange-50 text-orange-700 border-orange-200",
+        priceText: "text-orange-700",
+        btnBg: "bg-gradient-to-r from-[#f97316] to-[#eab308] text-white",
+        tabActive: "bg-gradient-to-r from-[#f97316] to-[#eab308] text-white shadow-sm",
+      },
+      "ml": {
+        barBg: "from-[#4f46e5] to-[#8b5cf6]",
+        cardBorder: "border-indigo-200/90 hover:border-[#4f46e5]",
+        badgeBg: "bg-indigo-50 text-[#4f46e5] border-indigo-200",
+        priceText: "text-[#4f46e5]",
+        btnBg: "bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-white",
+        tabActive: "bg-gradient-to-r from-[#4f46e5] to-[#8b5cf6] text-white shadow-sm",
+      },
+    };
+
+    // =========================================================================
+    // 2. HARDCODED PACKAGES ARRAY (All 74 items across 6 categories)
+    // =========================================================================
+    const PACKAGES = [
+      // Category: ltc-card (14 items)
+      { id: "ltc-card-1", category: "ltc-card", name: "ເຕີມ 10,000 ຫຼຸດ 1,000", price: 9000, badge: "ຫຼຸດ 1,000 ກີບ" },
+      { id: "ltc-card-2", category: "ltc-card", name: "ເຕີມ 20,000 ຫຼຸດ 2,000", price: 18000, badge: "ຫຼຸດ 2,000 ກີບ" },
+      { id: "ltc-card-3", category: "ltc-card", name: "ເຕີມ 40,000 ຫຼຸດ 4,000", price: 36000, badge: "ຫຼຸດ 4,000 ກີບ" },
+      { id: "ltc-card-4", category: "ltc-card", name: "ເຕີມ 60,000 ຫຼຸດ 6,000", price: 54000, badge: "ຫຼຸດ 6,000 ກີບ" },
+      { id: "ltc-card-5", category: "ltc-card", name: "ເຕີມ 10,000 ຫຼຸດ 700", price: 9300, badge: "ຫຼຸດ 700 ກີບ" },
+      { id: "ltc-card-6", category: "ltc-card", name: "ເຕີມ 20,000 ຫຼຸດ 1,400", price: 18600, badge: "ຫຼຸດ 1,400 ກີບ" },
+      { id: "ltc-card-7", category: "ltc-card", name: "ເຕີມ 40,000 ຫຼຸດ 2,800", price: 37200, badge: "ຫຼຸດ 2,800 ກີບ" },
+      { id: "ltc-card-8", category: "ltc-card", name: "ເຕີມ 60,000 ຫຼຸດ 4,200", price: 55800, badge: "ຫຼຸດ 4,200 ກີບ" },
+      { id: "ltc-card-9", category: "ltc-card", name: "ເຕີມ 100,000 ຫຼຸດ 7,000", price: 93000, badge: "ຫຼຸດ 7,000 ກີບ" },
+      { id: "ltc-card-10", category: "ltc-card", name: "ເຕີມ 150,000 ຫຼຸດ 10,500", price: 139500, badge: "ຫຼຸດ 10,500 ກີບ" },
+      { id: "ltc-card-11", category: "ltc-card", name: "ເຕີມ 200,000 ຫຼຸດ 14,000", price: 186000, badge: "ຫຼຸດ 14,000 ກີບ" },
+      { id: "ltc-card-12", category: "ltc-card", name: "ເຕີມ 300,000 ຫຼຸດ 21,000", price: 279000, badge: "ຫຼຸດ 21,000 ກີບ" },
+      { id: "ltc-card-13", category: "ltc-card", name: "ເຕີມ 400,000 ຫຼຸດ 28,000", price: 372000, badge: "ຫຼຸດ 28,000 ກີບ" },
+      { id: "ltc-card-14", category: "ltc-card", name: "ເຕີມ 500,000 ຫຼຸດ 35,000", price: 465000, badge: "ຫຼຸດ 35,000 ກີບ" },
+
+      // Category: ltc-net (24 items)
+      { id: "ltc-net-1", category: "ltc-net", name: "ຫຼັກ 9 5_ML Mobile Legends (1GB · 1 ມື້)", price: 4500, badge: "1 ມື້" },
+      { id: "ltc-net-2", category: "ltc-net", name: "ຫຼັກ 9 10_ML Mobile Legends (2.5GB · 7 ມື້)", price: 9000, badge: "7 ມື້" },
+      { id: "ltc-net-3", category: "ltc-net", name: "ຫຼັກ 9 15_ML Mobile Legends (5GB · 7 ມື້)", price: 13500, badge: "7 ມື້" },
+      { id: "ltc-net-4", category: "ltc-net", name: "ຫຼັກ 9 25_ML Mobile Legends (5GB · 7 ມື້)", price: 22500, badge: "7 ມື້" },
+      { id: "ltc-net-5", category: "ltc-net", name: "ຫຼັກ 9 25K (8GB · 10 ມື້)", price: 22500, badge: "10 ມື້" },
+      { id: "ltc-net-6", category: "ltc-net", name: "ຫຼັກ 9 CN25 (7GB + ຫຼິ້ນຟຣີ Wechat+Whatsapp · 7 ມື້)", price: 22500, badge: "7 ມື້" },
+      { id: "ltc-net-7", category: "ltc-net", name: "ຫຼັກ 9 CN35 (10GB + ຫຼິ້ນຟຣີ Wechat+FB+TikTok+Whatsapp · 10 ມື້)", price: 31500, badge: "10 ມື້" },
+      { id: "ltc-net-8", category: "ltc-net", name: "ຫຼັກ 9 40K (15GB · 15 ມື້)", price: 36000, badge: "15 ມື້" },
+      { id: "ltc-net-9", category: "ltc-net", name: "ຫຼັກ 9 Office 365", price: 40500, badge: "Office" },
+      { id: "ltc-net-10", category: "ltc-net", name: "ຫຼັກ 9 50K (15GB · 30 ມື້)", price: 45000, badge: "30 ມື້" },
+      { id: "ltc-net-11", category: "ltc-net", name: "ຫຼັກ 9 55K (15GB · 30 ມື້)", price: 49500, badge: "30 ມື້" },
+      { id: "ltc-net-12", category: "ltc-net", name: "ຫຼັກ 9 60K (20GB · 30 ມື້)", price: 54000, badge: "30 ມື້" },
+      { id: "ltc-net-13", category: "ltc-net", name: "ຫຼັກ 9 75K (30GB · 30 ມື້)", price: 67500, badge: "30 ມື້" },
+      { id: "ltc-net-14", category: "ltc-net", name: "ຫຼັກ 9 TV80 (30GB · 30 ມື້)", price: 72000, badge: "30 ມື້" },
+      { id: "ltc-net-15", category: "ltc-net", name: "ຫຼັກ 9 95K (40GB · 30 ມື້)", price: 85500, badge: "30 ມື້" },
+      { id: "ltc-net-16", category: "ltc-net", name: "ຫຼັກ 9 CN95 (30GB + ຫຼິ້ນຟຣີ YT+Wechat+Whatsapp+FB · 30 ມື້)", price: 85500, badge: "30 ມື້" },
+      { id: "ltc-net-17", category: "ltc-net", name: "ຫຼັກ 9 TV100 (40GB · 30 ມື້)", price: 90000, badge: "30 ມື້" },
+      { id: "ltc-net-18", category: "ltc-net", name: "ຫຼັກ 9 120K (55GB · 30 ມື້)", price: 108000, badge: "30 ມື້" },
+      { id: "ltc-net-19", category: "ltc-net", name: "ຫຼັກ 9 120_ML Mobile Legends (45GB · 30 ມື້)", price: 108000, badge: "30 ມື້" },
+      { id: "ltc-net-20", category: "ltc-net", name: "ຫຼັກ 9 TV125 (55GB · 30 ມື້)", price: 112500, badge: "30 ມື້" },
+      { id: "ltc-net-21", category: "ltc-net", name: "ຫຼັກ 9 150K (70GB · 30 ມື້)", price: 135000, badge: "30 ມື້" },
+      { id: "ltc-net-22", category: "ltc-net", name: "ຫຼັກ 9 5G150 (60GB + ໂທຟຣີ 150 ນາທີ + ຫຼິ້ນຟຣີ YT+FB+LAOTV4K · 30 ມື້)", price: 135000, badge: "5G 30 ມື້" },
+      { id: "ltc-net-23", category: "ltc-net", name: "ຫຼັກ 9 5G200 (90GB + ໂທຟຣີ 200 ນາທີ + ຫຼິ້ນຟຣີ YT+FB+TikTok+LAOTV4K · 30 ມື້)", price: 180000, badge: "5G 30 ມື້" },
+      { id: "ltc-net-24", category: "ltc-net", name: "ຫຼັກ 9 5G300 (140GB + ໂທຟຣີ 300 ນາທີ + ຫຼິ້ນຟຣີ YT+FB+TikTok+LAOTV4K · 30 ມື້)", price: 270000, badge: "5G 30 ມື້" },
+
+      // Category: unitel-card (10 items)
+      { id: "unitel-card-1", category: "unitel-card", name: "ເຕີມ 10,000 ຫຼຸດ 700", price: 9300, badge: "ຫຼຸດ 700 ກີບ" },
+      { id: "unitel-card-2", category: "unitel-card", name: "ເຕີມ 20,000 ຫຼຸດ 1,400", price: 18600, badge: "ຫຼຸດ 1,400 ກີບ" },
+      { id: "unitel-card-3", category: "unitel-card", name: "ເຕີມ 40,000 ຫຼຸດ 2,800", price: 37200, badge: "ຫຼຸດ 2,800 ກີບ" },
+      { id: "unitel-card-4", category: "unitel-card", name: "ເຕີມ 60,000 ຫຼຸດ 4,200", price: 55800, badge: "ຫຼຸດ 4,200 ກີບ" },
+      { id: "unitel-card-5", category: "unitel-card", name: "ເຕີມ 100,000 ຫຼຸດ 7,000", price: 93000, badge: "ຫຼຸດ 7,000 ກີບ" },
+      { id: "unitel-card-6", category: "unitel-card", name: "ເຕີມ 150,000 ຫຼຸດ 10,500", price: 139500, badge: "ຫຼຸດ 10,500 ກີບ" },
+      { id: "unitel-card-7", category: "unitel-card", name: "ເຕີມ 200,000 ຫຼຸດ 14,000", price: 186000, badge: "ຫຼຸດ 14,000 ກີບ" },
+      { id: "unitel-card-8", category: "unitel-card", name: "ເຕີມ 300,000 ຫຼຸດ 21,000", price: 279000, badge: "ຫຼຸດ 21,000 ກີບ" },
+      { id: "unitel-card-9", category: "unitel-card", name: "ເຕີມ 400,000 ຫຼຸດ 28,000", price: 372000, badge: "ຫຼຸດ 28,000 ກີບ" },
+      { id: "unitel-card-10", category: "unitel-card", name: "ເຕີມ 500,000 ຫຼຸດ 35,000", price: 465000, badge: "ຫຼຸດ 35,000 ກີບ" },
+
+      // Category: unitel-net (20 items)
+      { id: "unitel-net-1", category: "unitel-net", name: "ຫຼັກ 5 Special Package (4.7GB · 6 ວັນ)", price: 9200, badge: "6 ວັນ" },
+      { id: "unitel-net-2", category: "unitel-net", name: "ຫຼັກ 5 Data + Call on net (10GB · 10 ວັນ)", price: 23000, badge: "10 ວັນ" },
+      { id: "unitel-net-3", category: "unitel-net", name: "ຫຼັກ 5 Data + Call on net (15GB · 30 ວັນ)", price: 36800, badge: "30 ວັນ" },
+      { id: "unitel-net-4", category: "unitel-net", name: "ຫຼັກ 5 Data + Call on net (35GB · 30 ວັນ)", price: 78200, badge: "30 ມື້" },
+      { id: "unitel-net-5", category: "unitel-net", name: "ຫຼັກ 5 Premium 4G/5G + IR TH&MY (30GB · 30 ວັນ)", price: 92000, badge: "4G/5G" },
+      { id: "unitel-net-6", category: "unitel-net", name: "ຫຼັກ 5 Premium 4G/5G + IR TH&MY (70GB · 30 ວັນ)", price: 138000, badge: "4G/5G" },
+      { id: "unitel-net-7", category: "unitel-net", name: "ຫຼັກ 5 Premium 4G/5G + IR TH&MY (125GB · 30 ວັນ)", price: 230000, badge: "4G/5G" },
+      { id: "unitel-net-8", category: "unitel-net", name: "ຫຼັກ 5 Premium 4G/5G + IR TH&MY (250GB · 30 ວັນ)", price: 460000, badge: "4G/5G" },
+      { id: "unitel-net-9", category: "unitel-net", name: "ຫຼັກ 5 E-Sport Max Speed (3GB · 5 ວັນ)", price: 9200, badge: "E-Sport" },
+      { id: "unitel-net-10", category: "unitel-net", name: "ຫຼັກ 5 E-Sport Max Speed (15GB · 15 ວັນ)", price: 46000, badge: "E-Sport" },
+      { id: "unitel-net-11", category: "unitel-net", name: "ຫຼັກ 5 E-Sport Max Speed (30GB · 30 ວັນ)", price: 92000, badge: "E-Sport" },
+      { id: "unitel-net-12", category: "unitel-net", name: "ຫຼັກ 5 Non-Stop (25GB · 30 ວັນ)", price: 59800, badge: "Non-Stop" },
+      { id: "unitel-net-13", category: "unitel-net", name: "ຫຼັກ 5 Non-Stop (45GB · 30 ວັນ)", price: 92000, badge: "Non-Stop" },
+      { id: "unitel-net-14", category: "unitel-net", name: "ຫຼັກ 5 Non-Stop (70GB · 30 ວັນ)", price: 138000, badge: "Non-Stop" },
+      { id: "unitel-net-15", category: "unitel-net", name: "ຫຼັກ 5 Non-Stop (95GB · 30 ວັນ)", price: 184000, badge: "Non-Stop" },
+      { id: "unitel-net-16", category: "unitel-net", name: "ຫຼັກ 5 Unlimited FB, YT, TikTok (3GB · 5 ວັນ)", price: 18400, badge: "Unlimited" },
+      { id: "unitel-net-17", category: "unitel-net", name: "ຫຼັກ 5 Unlimited FB, YT, TikTok (10GB · 10 ວັນ)", price: 32200, badge: "Unlimited" },
+      { id: "unitel-net-18", category: "unitel-net", name: "ຫຼັກ 5 Unlimited FB, YT, TikTok (15GB · 20 ວັນ)", price: 59800, badge: "Unlimited" },
+      { id: "unitel-net-19", category: "unitel-net", name: "ຫຼັກ 5 Unlimited FB, YT, TikTok (30GB · 30 ມື້)", price: 92000, badge: "Unlimited" },
+      { id: "unitel-net-20", category: "unitel-net", name: "ຫຼັກ 5 Prepaid (4.5GB · 3 ວັນ)", price: 9200, badge: "3 ວັນ" },
+
+      // Category: ff (20 items)
+      { id: "ff-1", category: "ff", name: "33 ເພັດ", price: 8035, badge: "Free Fire" },
+      { id: "ff-2", category: "ff", name: "68 ເພັດ", price: 16068, badge: "Free Fire" },
+      { id: "ff-3", category: "ff", name: "172 ເພັດ", price: 40168, badge: "Free Fire" },
+      { id: "ff-4", category: "ff", name: "310 ເພັດ", price: 72303, badge: "Free Fire" },
+      { id: "ff-5", category: "ff", name: "517 ເພັດ", price: 120504, badge: "Free Fire" },
+      { id: "ff-6", category: "ff", name: "690 ເພັດ", price: 160672, badge: "Free Fire" },
+      { id: "ff-7", category: "ff", name: "1052 ເພັດ", price: 241007, badge: "Free Fire" },
+      { id: "ff-8", category: "ff", name: "1801 ເພັດ", price: 401679, badge: "Free Fire" },
+      { id: "ff-9", category: "ff", name: "3697 ເພັດ", price: 803358, badge: "Free Fire" },
+      { id: "ff-10", category: "ff", name: "ລາຍອາທິດມິນິ (200 ເພັດ)", price: 26779, badge: "Weekly Mini" },
+      { id: "ff-11", category: "ff", name: "ລາຍອາທິດ (450 ເພັດ)", price: 53557, badge: "Weekly" },
+      { id: "ff-12", category: "ff", name: "ລາຍເດືອນ (2,600 ເພັດ)", price: 241007, badge: "Monthly" },
+      { id: "ff-13", category: "ff", name: "BP Card ບູຢ່າພາສ", price: 72303, badge: "Booyah Pass" },
+      { id: "ff-14", category: "ff", name: "ເຕີບໂຕເລເວວ 6", price: 6013, badge: "Level Up" },
+      { id: "ff-15", category: "ff", name: "ເຕີບໂຕເລເວວ 10", price: 15034, badge: "Level Up" },
+      { id: "ff-16", category: "ff", name: "ເຕີບໂຕເລເວວ 15", price: 15034, badge: "Level Up" },
+      { id: "ff-17", category: "ff", name: "ເຕີບໂຕເລເວວ 20", price: 15034, badge: "Level Up" },
+      { id: "ff-18", category: "ff", name: "ເຕີບໂຕເລເວວ 25", price: 15034, badge: "Level Up" },
+      { id: "ff-19", category: "ff", name: "ເຕີບໂຕເລເວວ 30", price: 21047, badge: "Level Up" },
+      { id: "ff-20", category: "ff", name: "ໄອດີສ້າງໃໝ່ 100 ເພັດ (Level Up Pass)", price: 9021, badge: "New ID" },
+
+      // Category: ml (20 items)
+      { id: "ml-1", category: "ml", name: "86 ເພັດ", price: 35539, badge: "Mobile Legends" },
+      { id: "ml-2", category: "ml", name: "172 ເພັດ", price: 70529, badge: "Mobile Legends" },
+      { id: "ml-3", category: "ml", name: "257 ເພັດ", price: 103076, badge: "Mobile Legends" },
+      { id: "ml-4", category: "ml", name: "706 ເພັດ", price: 278126, badge: "Mobile Legends" },
+      { id: "ml-5", category: "ml", name: "2195 ເພັດ", price: 840907, badge: "Mobile Legends" },
+      { id: "ml-6", category: "ml", name: "3688 ເພັດ", price: 1402691, badge: "Mobile Legends" },
+      { id: "ml-7", category: "ml", name: "5532 ເພັດ", price: 2116000, badge: "Mobile Legends" },
+      { id: "ml-8", category: "ml", name: "9288 ເພັດ", price: 3516148, badge: "Mobile Legends" },
+      { id: "ml-9", category: "ml", name: "ບັດຜ່ານ Twilight", price: 232720, badge: "Twilight Pass" },
+      { id: "ml-10", category: "ml", name: "ບັດຜ່ານເພັດ ລາຍອາທິດ", price: 44112, badge: "Weekly Pass" },
+      { id: "ml-11", category: "ml", name: "50+50 ເພັດ ຄັ້ງທຳອິດ", price: 22530, badge: "1st Top-up" },
+      { id: "ml-12", category: "ml", name: "150+150 ເພັດ ຄັ້ງທຳອິດ", price: 67588, badge: "1st Top-up" },
+      { id: "ml-13", category: "ml", name: "4000 ເພັດ (5v5)", price: 1528296, badge: "5v5" },
+      { id: "ml-14", category: "ml", name: "6044 ເພັດ (5v5)", price: 2322151, badge: "5v5" },
+      { id: "ml-15", category: "ml", name: "7030 ເພັດ (5v5)", price: 2707789, badge: "5v5" },
+      { id: "ml-16", category: "ml", name: "10080 ເພັດ (5v5)", price: 3829812, badge: "5v5" },
+      { id: "ml-17", category: "ml", name: "422 ເພັດ (5v5)", price: 170664, badge: "5v5" },
+      { id: "ml-18", category: "ml", name: "312 ເພັດ (5v5)", price: 125605, badge: "5v5" },
+      { id: "ml-19", category: "ml", name: "ບັດຜ່ານເພັດ ລາຍອາທິດ x3 (5v5)", price: 132335, badge: "Weekly x3" },
+      { id: "ml-20", category: "ml", name: "ບັດຜ່ານເພັດ ລາຍອາທິດ x5 (5v5)", price: 220558, badge: "Weekly x5" },
+    ];
+
+    // =========================================================================
+    // 3. STATE & RENDER FUNCTIONS (Always fallback-safe & never wipes out)
+    // =========================================================================
+    let currentCategory = "all";
+    let currentSearch = "";
+    let selectedPackage = null;
+    let activeChannel = "whatsapp";
+    let toastTimer = null;
+
+    function formatKip(amount) {
+      const num = Number(amount) || 0;
+      return num.toLocaleString("en-US") + " ກີບ";
+    }
+
+    function showToast(msg) {
+      const banner = document.getElementById("toastBanner");
+      const text = document.getElementById("toastText");
+      if (!banner || !text) return;
+      text.textContent = msg;
+      banner.classList.remove("hidden");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        banner.classList.add("hidden");
+      }, 2500);
+    }
+
+    function renderCategoryTabs() {
+      const tabsEl = document.getElementById("categoryTabs");
+      if (!tabsEl) return;
+
+      tabsEl.innerHTML = CATEGORY_TABS.map(tab => {
+        const isActive = currentCategory === tab.id;
+        let activeClass = "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm";
+        if (tab.id !== "all" && CATEGORY_STYLES[tab.id]) {
+          activeClass = CATEGORY_STYLES[tab.id].tabActive;
+        }
+        return `
+          <button
+            type="button"
+            onclick="selectCategory('${tab.id}')"
+            class="shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer ${
+              isActive
+                ? activeClass
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }"
+          >
+            ${tab.label}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function selectCategory(categoryId) {
+      currentCategory = categoryId;
+      renderCategoryTabs();
+      renderPackages();
+    }
+
+    function clearSearch() {
+      currentSearch = "";
+      const input = document.getElementById("searchInput");
+      const clearBtn = document.getElementById("clearSearchBtn");
+      if (input) input.value = "";
+      if (clearBtn) clearBtn.classList.add("hidden");
+      renderPackages();
+    }
+
+    function resetFilters() {
+      currentCategory = "all";
+      currentSearch = "";
+      const input = document.getElementById("searchInput");
+      const clearBtn = document.getElementById("clearSearchBtn");
+      if (input) input.value = "";
+      if (clearBtn) clearBtn.classList.add("hidden");
+      renderCategoryTabs();
+      renderPackages();
+    }
+
+    function getFilteredPackages() {
+      const q = currentSearch.trim().toLowerCase();
+      return PACKAGES.filter(pkg => {
+        const matchCat = currentCategory === "all" || pkg.category === currentCategory;
+        if (!matchCat) return false;
+        if (!q) return true;
+        return (
+          pkg.name.toLowerCase().includes(q) ||
+          pkg.badge.toLowerCase().includes(q) ||
+          String(pkg.price).includes(q) ||
+          formatKip(pkg.price).toLowerCase().includes(q)
+        );
+      });
+    }
+
+    function renderPackages() {
+      const container = document.getElementById("packagesContainer");
+      const emptyNotice = document.getElementById("emptyNotice");
+      if (!container) return;
+
+      let list = getFilteredPackages();
+      // Safety guard: if a custom filter ever produces 0 items unexpectedly on initial load, fall back to full list
+      if (list.length === 0 && currentCategory === "all" && !currentSearch.trim()) {
+        list = PACKAGES.slice();
+      }
+
+      if (list.length === 0) {
+        container.innerHTML = "";
+        if (emptyNotice) emptyNotice.classList.remove("hidden");
+        return;
+      }
+
+      if (emptyNotice) emptyNotice.classList.add("hidden");
+
+      const orderedCats = CATEGORY_TABS.filter(t => t.id !== "all");
+      const sectionsHtml = orderedCats
+        .map(catTab => {
+          const catItems = list.filter(item => item.category === catTab.id);
+          if (catItems.length === 0) return "";
+          const st = CATEGORY_STYLES[catTab.id] || CATEGORY_STYLES["ml"];
+
+          return `
+            <section class="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm">
+              <div class="bg-gradient-to-r ${st.barBg} px-4 sm:px-5 py-3 text-white flex items-center justify-between">
+                <h3 class="font-extrabold text-sm sm:text-base">${catTab.title}</h3>
+                <span class="text-xs font-bold bg-white/20 px-2.5 py-0.5 rounded-full">
+                  ${catItems.length} ລາຍການ
+                </span>
+              </div>
+              <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                ${catItems.map(item => {
+                  const isSelected = selectedPackage && selectedPackage.id === item.id;
+                  return `
+                    <div
+                      onclick="handleSelectPackage('${item.id}')"
+                      class="pkg-card rounded-2xl p-3.5 border-2 cursor-pointer flex flex-col justify-between gap-2.5 ${
+                        isSelected
+                          ? "bg-indigo-50/70 border-indigo-500 shadow-md"
+                          : `bg-slate-50/60 hover:bg-white ${st.cardBorder} shadow-xs`
+                      }"
+                    >
+                      <div class="flex items-start justify-between gap-2">
+                        <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
+                          ${item.name}
+                        </h4>
+                        <span class="shrink-0 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-lg border ${st.badgeBg}">
+                          ${item.badge}
+                        </span>
+                      </div>
+                      <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                        <span class="text-sm sm:text-base font-extrabold ${st.priceText}">
+                          ${formatKip(item.price)}
+                        </span>
+                        <span class="text-xs font-bold px-3 py-1 rounded-xl ${st.btnBg}">
+                          ${isSelected ? "ເລືອກແລ້ວ ✓" : "ສັ່ງຊື້"}
+                        </span>
+                      </div>
+                    </div>
+                  `;
+                }).join("")}
+              </div>
+            </section>
+          `;
+        })
+        .join("");
+
+      container.innerHTML = sectionsHtml;
+    }
+
+    // =========================================================================
+    // 4. ORDER MODAL, DYNAMIC FIELDS, CLIPBOARD & CHANNEL LAUNCH
+    // =========================================================================
+    function handleSelectPackage(pkgId) {
+      const found = PACKAGES.find(p => p.id === pkgId);
+      if (!found) return;
+
+      selectedPackage = found;
+      renderPackages();
+
+      const banner = document.getElementById("selectedPreviewBanner");
+      const bannerName = document.getElementById("bannerItemName");
+      const bannerPrice = document.getElementById("bannerItemPrice");
+      if (banner && bannerName && bannerPrice) {
+        banner.classList.remove("hidden");
+        bannerName.textContent = found.name;
+        bannerPrice.textContent = formatKip(found.price);
+      }
+
+      openOrderModal();
+    }
+
+    function openOrderModal() {
+      if (!selectedPackage) return;
+
+      const modal = document.getElementById("orderModal");
+      const catTab = CATEGORY_TABS.find(t => t.id === selectedPackage.category);
+      document.getElementById("modalPkgBadge").textContent = catTab ? catTab.title : selectedPackage.badge;
+      document.getElementById("modalPkgName").textContent = selectedPackage.name;
+      document.getElementById("modalPkgPrice").textContent = formatKip(selectedPackage.price);
+
+      // Show dynamic input field based on category
+      const isPhoneCat = ["ltc-card", "ltc-net", "unitel-card", "unitel-net"].includes(selectedPackage.category);
+      const isFfCat = selectedPackage.category === "ff";
+      const isMlCat = selectedPackage.category === "ml";
+
+      document.getElementById("fieldPhoneWrapper").classList.toggle("hidden", !isPhoneCat);
+      document.getElementById("fieldFfWrapper").classList.toggle("hidden", !isFfCat);
+      document.getElementById("fieldMlWrapper").classList.toggle("hidden", !isMlCat);
+      document.getElementById("orderErrorBox").classList.add("hidden");
+
+      updateModalOrderPreview();
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById("orderModal");
+      if (modal) modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+
+    function setOrderChannel(channel) {
+      activeChannel = channel;
+      const waBtn = document.getElementById("optWhatsapp");
+      const msBtn = document.getElementById("optMessenger");
+      const waCheck = document.getElementById("checkWhatsapp");
+      const msCheck = document.getElementById("checkMessenger");
+      const launchBtn = document.getElementById("launchOrderBtn");
+
+      if (channel === "whatsapp") {
+        waBtn.className = "p-2.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition";
+        msBtn.className = "p-2.5 rounded-2xl border-2 border-slate-200 bg-slate-50 text-slate-700 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition";
+        waCheck.classList.remove("hidden");
+        msCheck.classList.add("hidden");
+        launchBtn.className = "w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-500/25 cursor-pointer transition";
+        launchBtn.textContent = "ຄັດລອກ ແລະ ເປີດ WhatsApp ທັນທີ ↗";
+      } else {
+        msBtn.className = "p-2.5 rounded-2xl border-2 border-indigo-500 bg-indigo-50 text-indigo-900 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition";
+        waBtn.className = "p-2.5 rounded-2xl border-2 border-slate-200 bg-slate-50 text-slate-700 font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition";
+        msCheck.classList.remove("hidden");
+        waCheck.classList.add("hidden");
+        launchBtn.className = "w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-sm shadow-lg shadow-indigo-500/25 cursor-pointer transition";
+        launchBtn.textContent = "ຄັດລອກ ແລະ ເປີດ Messenger ທັນທີ ↗";
+      }
+    }
+
+    function readCustomerDetails() {
+      if (!selectedPackage) return { ok: false, label: "", value: "", error: "ຍັງບໍ່ໄດ້ເລືອກແພັກເກັດ" };
+
+      if (["ltc-card", "ltc-net", "unitel-card", "unitel-net"].includes(selectedPackage.category)) {
+        const phone = document.getElementById("inputPhone").value.trim();
+        return {
+          ok: phone.length >= 6,
+          label: "ເບີໂທລະສັບ",
+          value: phone || "(ຍັງບໍ່ໄດ້ປ້ອນເບີໂທ)",
+          error: "ກະລຸນາປ້ອນເບີໂທລະສັບທີ່ຕ້ອງການເຕີມ",
+        };
+      }
+
+      if (selectedPackage.category === "ff") {
+        const uid = document.getElementById("inputFfUid").value.trim();
+        return {
+          ok: uid.length >= 4,
+          label: "ໄອດີ Free Fire (UID)",
+          value: uid || "(ຍັງບໍ່ໄດ້ປ້ອນ UID)",
+          error: "ກະລຸນາປ້ອນໄອດີເກມ Free Fire (UID)",
+        };
+      }
+
+      if (selectedPackage.category === "ml") {
+        const userId = document.getElementById("inputMlUser").value.trim();
+        const serverId = document.getElementById("inputMlServer").value.trim();
+        return {
+          ok: userId.length >= 4 && serverId.length >= 2,
+          label: "User ID / Server ID",
+          value: (userId || serverId) ? `${userId || "?"} (${serverId || "?"})` : "(ຍັງບໍ່ໄດ້ປ້ອນ ID)",
+          error: "ກະລຸນາປ້ອນ User ID ແລະ Server ID ໃຫ້ຄົບຖ້ວນ",
+        };
+      }
+
+      return { ok: true, label: "", value: "", error: "" };
+    }
+
+    function buildOrderSummaryText() {
+      if (!selectedPackage) return "";
+      const info = readCustomerDetails();
+      return [
+        "ຮ້ານເຕີມບັດ&ເຕີມເກມ - ແຈ້ງອໍເດີ",
+        `ລາຍການ: ${selectedPackage.name}`,
+        `ລາຄາ: ${formatKip(selectedPackage.price)}`,
+        `${info.label}: ${info.value}`,
+      ].join("\n");
+    }
+
+    function updateModalOrderPreview() {
+      const preview = document.getElementById("modalOrderPreview");
+      if (preview) {
+        preview.textContent = buildOrderSummaryText();
+      }
+    }
+
+    function copyOrderSummary(showFeedback = true) {
+      const text = buildOrderSummaryText();
+      if (!text) return false;
+
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      let copied = false;
+      try {
+        copied = document.execCommand("copy");
+      } catch (err) {
+        copied = false;
+      }
+      document.body.removeChild(ta);
+
+      if (showFeedback && copied) {
+        showToast("ຄັດລອກຂໍ້ຄວາມອໍເດີແລ້ວ!");
+      }
+      return copied;
+    }
+
+    function launchOrderChannel() {
+      const info = readCustomerDetails();
+      const errBox = document.getElementById("orderErrorBox");
+
+      if (!info.ok) {
+        errBox.textContent = info.error;
+        errBox.classList.remove("hidden");
+        return;
+      }
+
+      errBox.classList.add("hidden");
+      copyOrderSummary(false);
+
+      const targetUrl = activeChannel === "whatsapp" ? WHATSAPP_URL : MESSENGER_URL;
+      const appName = activeChannel === "whatsapp" ? "WhatsApp" : "Messenger";
+      showToast(`ຄັດລອກອໍເດີແລ້ວ! ກຳລັງເປີດ ${appName}...`);
+
+      setTimeout(() => {
+        window.open(targetUrl, "_blank", "noopener,noreferrer");
+      }, 250);
+    }
+
+    // =========================================================================
+    // 5. QR MODAL & INITIALIZATION
+    // =========================================================================
+    function openQrModal() {
+      const modal = document.getElementById("qrModal");
+      if (modal) {
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    function closeQrModal() {
+      const modal = document.getElementById("qrModal");
+      if (modal) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+    }
+
+    function initApp() {
+      renderCategoryTabs();
+      renderPackages();
+
+      const searchInput = document.getElementById("searchInput");
+      const clearBtn = document.getElementById("clearSearchBtn");
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentSearch = e.target.value;
+          if (clearBtn) {
+            clearBtn.classList.toggle("hidden", currentSearch.length === 0);
+          }
+          renderPackages();
+        });
+      }
+
+      ["inputPhone", "inputFfUid", "inputMlUser", "inputMlServer"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener("input", updateModalOrderPreview);
+        }
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initApp);
+    } else {
+      initApp();
+    }
+  </script>
+</body>
+</html>
+```
